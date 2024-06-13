@@ -1,7 +1,7 @@
 ---
 import Time from "@/icons/Time.astro";
 import { type Song } from "@/lib/data";
-import { SongPlayButton } from "./SongPlayButton";
+import { SongPlayButton } from "./SongPlayButton.tsx";
 
 interface Props {
   songs: Song[];
@@ -46,12 +46,16 @@ const { songs } = Astro.props;
               />
             </picture>
             <div class="flex flex-col">
-              <h3 class="text-white text-sm lg:text-base font-normal">{song.title}</h3>
+              <h3 class="text-white text-sm lg:text-base font-normal">
+                {song.title}
+              </h3>
               <span class="text-xs lg:text-sm">{song.artists?.join(", ")}</span>
             </div>
           </td>
           <td class="px-4 py-2 text-xs lg:text-sm">{song.album}</td>
-          <td class="px-0 text-center py-2 rounded-tr-lg rounded-br-lg">{song.duration}</td>
+          <td class="px-0 text-center py-2 rounded-tr-lg rounded-br-lg">
+            {song.duration}
+          </td>
         </tr>
       ))
     }

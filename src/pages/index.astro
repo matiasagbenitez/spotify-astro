@@ -6,15 +6,21 @@ import { playlists } from "@/lib/data";
 ---
 
 <Layout title="Scrotify — Inicio">
-  <div
-    id="playlist-container"
-    class="relative transition-all duration-1000"
-  >
-
+  <div id="playlist-container" class="relative transition-all duration-1000">
     <div class="relative z-10 p-6">
       <Greeting />
-      <div class="mt-4 grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+      <div
+        class="mt-4 grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"
+      >
         {playlists.map((playlist) => <PlaylistItemCard playlist={playlist} />)}
+      </div>
+      <div class="text-end mt-3">
+        <a
+          title="Built and designed by Matías Agustín Benítez 🤪"
+          target="_blank"
+          class="text-lg text-gray-400 opacity-10 hover:opacity-25 hover:cursor-pointer"
+          >matiasagbenitez</a
+        >
       </div>
     </div>
 

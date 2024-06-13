@@ -16,6 +16,6 @@
   }
 </script>
 
-<h1 class="text-2xl font-bold">
+<h1 class="text-2xl font-bold pb-1">
   {greeting}
 </h1>

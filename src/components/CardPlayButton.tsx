@@ -1,7 +1,12 @@
 import { Pause, Play } from "./Player";
 import { usePlayerStore } from "@/store/playerStore";
 
-export function CardPlayButton({ id, size = "small" }) {
+interface CardPlayButtonProps {
+  id: number | string;
+  size?: "small" | "large";
+}
+
+export function CardPlayButton({ id, size = "small" }: CardPlayButtonProps) {
   const { currentMusic, isPlaying, setCurrentMusic, setIsPlaying } =
     usePlayerStore((state) => state);
 

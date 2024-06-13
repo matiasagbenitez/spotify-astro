@@ -1,12 +1,23 @@
 import { Pause, Play } from "./Player";
 import { usePlayerStore } from "@/store/playerStore";
 
-export function SongPlayButton({ id, albumId, size = "small" }) {
+interface SongPlayButtonProps {
+  id: number | string;
+  albumId: number | string;
+  size?: "small" | "large";
+}
+
+export function SongPlayButton({
+  id,
+  albumId,
+  size = "small",
+}: SongPlayButtonProps) {
   const { currentMusic, isPlaying, setCurrentMusic, setIsPlaying } =
     usePlayerStore((state) => state);
 
-    const isPlayingPlaylist = isPlaying && currentMusic?.playlist.id == albumId;
-    const isPlayingSong = isPlaying && isPlayingPlaylist && currentMusic?.song.id == id;
+  const isPlayingPlaylist = isPlaying && currentMusic?.playlist.id == albumId;
+  const isPlayingSong =
+    isPlaying && isPlayingPlaylist && currentMusic?.song.id == id;
 
   const handleClick = () => {
     if (isPlayingPlaylist && isPlayingSong) {
@@ -39,7 +50,6 @@ export function SongPlayButton({ id, albumId, size = "small" }) {
     >
       {isPlayingSong ? (
         <Pause className={iconClassName} />
-        // <Playing className={iconClassName} />
       ) : (
         <Play className={iconClassName} />
       )}

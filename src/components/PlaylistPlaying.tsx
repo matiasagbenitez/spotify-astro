@@ -2,7 +2,11 @@ import { useEffect, useState } from "react";
 import { Playing } from "./Player";
 import { usePlayerStore } from "@/store/playerStore";
 
-export function PlaylistPlaying({ albumId }) {
+interface PlaylistPlayingProps {
+  albumId: number | string;
+}
+
+export function PlaylistPlaying({ albumId }: PlaylistPlayingProps) {
   const { currentMusic, isPlaying } = usePlayerStore((state) => state);
   const [isPlayingPlaylist, setIsPlayingPlaylist] = useState(false);
 

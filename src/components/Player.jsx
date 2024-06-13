@@ -88,9 +88,8 @@ export const Next = () => (
   </svg>
 );
 
-export const Playing = ({ className }) => (
+export const Playing = () => (
   <svg
-    className={className}
     role="img"
     height="20"
     width="20"
