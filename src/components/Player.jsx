@@ -2,6 +2,167 @@ import { usePlayerStore } from "@/store/playerStore";
 import { useEffect, useRef, useState } from "react";
 import { Slider } from "./Slider";
 
+export const Randomize = ({ className, color = "#fafafa" }) => (
+  <svg
+    className={className}
+    fill={color}
+    width="16"
+    height="16"
+    viewBox="0 0 32.00 32.00"
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    stroke={color}
+    stroke-width="0.00032"
+  >
+    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+    <g
+      id="SVGRepo_tracerCarrier"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke="#CCCCCC"
+      stroke-width="0.128"
+    ></g>
+    <g id="SVGRepo_iconCarrier">
+      {" "}
+      <title>random</title>{" "}
+      <path d="M0 24q0 0.832 0.576 1.44t1.44 0.576h1.984q2.048 0 3.904-0.8t3.168-2.144 2.144-3.2 0.8-3.872q0-2.464 1.728-4.224t4.256-1.76h4v1.984q0 0.672 0.384 1.152t0.864 0.704 1.12 0.128 1.056-0.544l4-4q0.608-0.64 0.576-1.44t-0.576-1.408l-4-4q-0.48-0.448-1.088-0.544t-1.12 0.128-0.864 0.704-0.352 1.12v2.016h-4q-2.016 0-3.872 0.8t-3.2 2.112-2.144 3.2-0.768 3.872q0 2.496-1.76 4.256t-4.256 1.76h-1.984q-0.832 0-1.44 0.576t-0.576 1.408zM0 8.032q0 0.832 0.576 1.408t1.44 0.576h1.984q1.408 0 2.592 0.608t2.080 1.664q0.672-2.048 1.984-3.68-2.912-2.592-6.656-2.592h-1.984q-0.832 0-1.44 0.608t-0.576 1.408zM13.376 23.456q2.848 2.56 6.624 2.56h4v2.016q0 0.64 0.384 1.152t0.864 0.704 1.12 0.096 1.056-0.544l4-4q0.608-0.608 0.576-1.44t-0.576-1.376l-4-4q-0.48-0.48-1.088-0.576t-1.12 0.128-0.864 0.736-0.352 1.12v1.984h-4q-1.376 0-2.592-0.576t-2.048-1.664q-0.704 2.048-1.984 3.68z"></path>{" "}
+    </g>
+  </svg>
+);
+
+export const Repeat = ({ className, color = "#fafafa" }) => (
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    stroke={color}
+  >
+    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+    <g
+      id="SVGRepo_tracerCarrier"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    ></g>
+    <g id="SVGRepo_iconCarrier">
+      {" "}
+      <path
+        d="M14 7H15.9992C19.3129 7 21.9992 9.68629 21.9992 13C21.9992 16.3137 19.3129 19 15.9992 19H8C4.68629 19 2 16.3137 2 13C2 9.68629 4.68629 7 8 7H10M7 4L10 7M10 7L7 10"
+        stroke={color}
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      ></path>{" "}
+    </g>
+  </svg>
+);
+
+export const Previous = ({ className }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    class="icon icon-tabler icons-tabler-filled icon-tabler-player-track-prev"
+  >
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <path d="M20.341 4.247l-8 7a1 1 0 0 0 0 1.506l8 7c.647 .565 1.659 .106 1.659 -.753v-14c0 -.86 -1.012 -1.318 -1.659 -.753z" />
+    <path d="M9.341 4.247l-8 7a1 1 0 0 0 0 1.506l8 7c.647 .565 1.659 .106 1.659 -.753v-14c0 -.86 -1.012 -1.318 -1.659 -.753z" />
+  </svg>
+);
+
+export const Next = ({ className }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    class="icon icon-tabler icons-tabler-filled icon-tabler-player-track-next"
+  >
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <path d="M2 5v14c0 .86 1.012 1.318 1.659 .753l8 -7a1 1 0 0 0 0 -1.506l-8 -7c-.647 -.565 -1.659 -.106 -1.659 .753z" />
+    <path d="M13 5v14c0 .86 1.012 1.318 1.659 .753l8 -7a1 1 0 0 0 0 -1.506l-8 -7c-.647 -.565 -1.659 -.106 -1.659 .753z" />
+  </svg>
+);
+
+export const Playing = ({ className }) => (
+  <svg
+    className={className}
+    role="img"
+    height="16"
+    width="16"
+    aria-hidden="true"
+    viewBox="0 0 16 16"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect x="1" y="3" width="2" height="10">
+      <animate
+        attributeName="height"
+        values="10;2;10"
+        dur="1s"
+        repeatCount="indefinite"
+      />
+      <animate
+        attributeName="y"
+        values="3;9;3"
+        dur="1s"
+        repeatCount="indefinite"
+      />
+    </rect>
+    <rect x="5" y="3" width="2" height="10">
+      <animate
+        attributeName="height"
+        values="10;6;10"
+        dur="1s"
+        repeatCount="indefinite"
+        begin="0.2s"
+      />
+      <animate
+        attributeName="y"
+        values="3;7;3"
+        dur="1s"
+        repeatCount="indefinite"
+        begin="0.2s"
+      />
+    </rect>
+    <rect x="9" y="3" width="2" height="10">
+      <animate
+        attributeName="height"
+        values="10;2;10"
+        dur="1s"
+        repeatCount="indefinite"
+        begin="0.4s"
+      />
+      <animate
+        attributeName="y"
+        values="3;9;3"
+        dur="1s"
+        repeatCount="indefinite"
+        begin="0.4s"
+      />
+    </rect>
+    <rect x="13" y="3" width="2" height="10">
+      <animate
+        attributeName="height"
+        values="10;6;10"
+        dur="1s"
+        repeatCount="indefinite"
+        begin="0.6s"
+      />
+      <animate
+        attributeName="y"
+        values="3;7;3"
+        dur="1s"
+        repeatCount="indefinite"
+        begin="0.6s"
+      />
+    </rect>
+  </svg>
+);
+
 export const Pause = ({ className }) => (
   <svg
     className={className}
@@ -76,7 +237,7 @@ const VolumeControl = () => {
   };
 
   return (
-    <div className="flex justify-center gap-x-2 text-white">
+    <div className="flex justify-center gap-x-2">
       <button
         className="opacity-70 hover:opacity-100 transition"
         onClick={handleClickVolumen}
@@ -89,7 +250,7 @@ const VolumeControl = () => {
         max={100}
         min={0}
         value={[volume * 100]}
-        className="w-[95px]"
+        className="w-[100px]"
         onValueChange={(value) => {
           const [newVolume] = value;
           const volumeValue = newVolume / 100;
@@ -100,19 +261,37 @@ const VolumeControl = () => {
   );
 };
 
-const SongControl = ({ audio }) => {
+const SongControl = ({ audio, nextSong, repeat }) => {
   const [currentTime, setCurrentTime] = useState(0);
 
   useEffect(() => {
+    const handleTimeUpdate = () => {
+      setCurrentTime(audio.current.currentTime);
+    };
+
     audio.current.addEventListener("timeupdate", handleTimeUpdate);
+
     return () => {
       audio.current.removeEventListener("timeupdate", handleTimeUpdate);
     };
-  }, []);
+  }, [audio]);
 
-  const handleTimeUpdate = () => {
-    setCurrentTime(audio.current.currentTime);
+  const handleNextSong = () => {
+    if (repeat) {
+      audio.current.currentTime = 0;
+      audio.current.play();
+    } else {
+      nextSong();
+    }
   };
+
+  useEffect(() => {
+    audio.current.addEventListener("ended", handleNextSong);
+
+    return () => {
+      audio.current.removeEventListener("ended", handleNextSong);
+    };
+  }, [audio, repeat, nextSong]);
 
   const formatTime = (time) => {
     if (time == null) return `0:00`;
@@ -133,7 +312,7 @@ const SongControl = ({ audio }) => {
 
       <Slider
         value={[currentTime]}
-        max={audio?.current?.duration ?? 0}
+        max={duration}
         min={0}
         className="w-[400px]"
         onValueChange={(value) => {
@@ -152,8 +331,10 @@ const SongControl = ({ audio }) => {
 const CurrentSong = ({ image, title, artists }) => {
   return (
     <div className={`flex items-center gap-4 relative overflow-hidden`}>
-      <picture className="w-16 h-16 bg-zinc-800 rounded-md shadow-lg overflow-hidden">
-        <img src={image} alt={title} />
+      <picture className="w-16 h-16 rounded-md shadow-lg overflow-hidden">
+        {image && (
+          <img src={image} alt={title} className="w-full h-full object-cover" />
+        )}
       </picture>
       <div className="flex flex-col">
         <h3 className="font-semibold text-sm block">{title}</h3>
@@ -164,9 +345,23 @@ const CurrentSong = ({ image, title, artists }) => {
 };
 
 export function Player() {
+  const [firstMount, setFirstMount] = useState(true);
   const { isPlaying, setIsPlaying, currentMusic, setCurrentMusic, volume } =
     usePlayerStore((state) => state);
   const audioRef = useRef();
+  const [isRandom, setIsRandom] = useState(false);
+  const [isRepeat, setIsRepeat] = useState(false);
+
+  // Random music at the beginning
+  useEffect(() => {
+    fetch("/api/get-info-playlist.json?id=1")
+      .then((res) => res.json())
+      .then((data) => {
+        const { songs, playlist } = data;
+        setCurrentMusic({ playlist, songs, song: songs[0] });
+        setFirstMount(false);
+      });
+  }, []);
 
   useEffect(() => {
     isPlaying ? audioRef.current.play() : audioRef.current.pause();
@@ -182,7 +377,9 @@ export function Player() {
       const src = `/music/${playlist?.id}/0${song.id}.mp3`;
       audioRef.current.src = src;
       audioRef.current.volume = volume;
-      audioRef.current.play();
+      if (!firstMount) {
+        audioRef.current.play();
+      }
     }
   }, [currentMusic]);
 
@@ -190,19 +387,92 @@ export function Player() {
     setIsPlaying(!isPlaying);
   };
 
+  const handlePrevious = () => {
+    const { song, songs } = currentMusic;
+    const index = songs.findIndex((s) => s.id === song.id);
+    const previousSong = songs[index - 1];
+    if (previousSong) {
+      setCurrentMusic({ ...currentMusic, song: previousSong });
+    }
+  };
+
+  const handleNext = () => {
+    const { song, songs } = currentMusic;
+    if (isRandom) {
+      let newSong = song;
+      while (newSong.id === song.id) {
+        const randomIndex = Math.floor(Math.random() * songs.length);
+        newSong = songs[randomIndex];
+      }
+      setCurrentMusic({ ...currentMusic, song: newSong });
+    } else {
+      const index = songs.findIndex((s) => s.id === song.id);
+      const nextSong = songs[index + 1];
+      if (nextSong) {
+        setCurrentMusic({ ...currentMusic, song: nextSong });
+      } else {
+        setCurrentMusic({ ...currentMusic, song: songs[0] });
+      }
+    }
+  };
+
+  const handleRandom = () => {
+    setIsRandom(!isRandom);
+  };
+
+  const handleRepeat = () => {
+    setIsRepeat(!isRepeat);
+  };
+
   return (
-    <div className="flex flex-row justify-between w-full py-2 z-50">
-      <CurrentSong {...currentMusic.song} />
+    <div className="flex flex-row justify-between w-full py-2 px-8 z-50">
+      <div className="w-72">
+        <CurrentSong {...currentMusic.song} />
+      </div>
       <div className="grid place-content-center gap-4 flex-1">
         <div className="flex justify-center flex-col items-center">
-          <button className="bg-white rounded-full p-3" onClick={handleClick}>
-            {isPlaying ? <Pause /> : <Play />}
-          </button>
-          <SongControl audio={audioRef} />
+          <div className="flex justify-center gap-x-3">
+            <button
+              title="Orden aleatorio"
+              className="p-2 opacity-70 hover:opacity-100 transition"
+              onClick={handleRepeat}
+            >
+              <Repeat color={isRepeat ? "#1ED760" : "#fafafa"} />
+            </button>
+            <button
+              title="Canción anterior"
+              className="p-2 opacity-70 hover:opacity-100 transition"
+              onClick={handlePrevious}
+            >
+              <Previous />
+            </button>
+            <button className="bg-white rounded-full p-3" onClick={handleClick}>
+              {isPlaying ? <Pause /> : <Play />}
+            </button>
+            <button
+              title="Canción siguiente"
+              className="p-2 opacity-70 hover:opacity-100 transition"
+              onClick={handleNext}
+            >
+              <Next />
+            </button>
+            <button
+              title="Activar repetición"
+              className="p-2 opacity-70 hover:opacity-100 transition"
+              onClick={handleRandom}
+            >
+              <Randomize color={isRandom ? "#1ED760" : "#fafafa"} />
+            </button>
+          </div>
+          <SongControl
+            audio={audioRef}
+            nextSong={handleNext}
+            repeat={isRepeat}
+          />
           <audio ref={audioRef} />
         </div>
       </div>
-      <div className="grid place-content-center">
+      <div className="w-72 flex items-center justify-end">
         <VolumeControl />
       </div>
       <audio ref={audioRef} />

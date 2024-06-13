@@ -1,5 +1,6 @@
 ---
 import type { Playlist } from "@/lib/data";
+import { PlaylistPlaying } from "./PlaylistPlaying";
 
 interface Props {
   playlist: Playlist;
@@ -26,5 +27,6 @@ const artistsString = artists.join(", ");
       <h4 class="text-white text-sm">{title}</h4>
       <span class="text-xs text-gray-400">{artistsString}</span>
     </div>
+    <!-- <PlaylistPlaying id={albumId} /> -->
   </a>
 </li>
