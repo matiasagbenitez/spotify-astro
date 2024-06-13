@@ -105,7 +105,6 @@ const SongControl = ({ audio }) => {
 
   useEffect(() => {
     audio.current.addEventListener("timeupdate", handleTimeUpdate);
-
     return () => {
       audio.current.removeEventListener("timeupdate", handleTimeUpdate);
     };
@@ -192,11 +191,11 @@ export function Player() {
   };
 
   return (
-    <div className="flex flex-row justify-between w-full px-4 py-2 z-50">
+    <div className="flex flex-row justify-between w-full py-2 z-50">
       <CurrentSong {...currentMusic.song} />
       <div className="grid place-content-center gap-4 flex-1">
         <div className="flex justify-center flex-col items-center">
-          <button className="bg-white rounded-full p-2" onClick={handleClick}>
+          <button className="bg-white rounded-full p-3" onClick={handleClick}>
             {isPlaying ? <Pause /> : <Play />}
           </button>
           <SongControl audio={audioRef} />
