@@ -30,8 +30,19 @@ const { title } = Astro.props;
       <aside class="[grid-area:aside] flex flex-col overflow-y-auto">
         <AsideMenu />
       </aside>
-      <main class="[grid-area:main] rounded-lg bg-zinc-900 overflow-y-auto">
+      <main class="[grid-area:main] rounded-lg bg-zinc-900 overflow-y-auto flex flex-col justify-between">
         <slot />
+
+        <div class="m-6 text-end">
+          <!-- Marca de agua matiasagbenitez -->
+          <a
+            href="https://matiasagbenitez.dev"
+            target="_blank"
+            class="text-xl text-gray-400 opacity-15 hover:opacity-25"
+            >matiasagbenitez</a
+          >
+
+        </div>
       </main>
       <footer class="[grid-area:player] py-4 lg:py-0">
         <Player client:load transition:name="media-player" transition:persist />
