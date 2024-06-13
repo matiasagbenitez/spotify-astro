@@ -1,11 +1,12 @@
 ---
 interface Props {
   href?: string;
+  mb?: string;
 }
-const { href } = Astro.props;
+const { href, mb } = Astro.props;
 ---
 
-<li>
+<li class={`mb-${mb}`}>
   <a
     href={href}
     class="flex gap-4 text-zinc-400 hover:text-zinc-100 items-center px-2 py-3 font-medium transition-duration-300"

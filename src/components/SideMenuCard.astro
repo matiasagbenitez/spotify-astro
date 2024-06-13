@@ -13,7 +13,7 @@ const artistsString = artists.join(", ");
 
 <li>
   <a
-    href={`/playlist/${id}`}
+    href={`/playlist/${albumId}`}
     class="playlist-item flex relative p-2 overflow-hidden items-center gap-4 rounded-md hover:bg-zinc-500"
   >
     <picture class="h-10 w-10 flex-none">
@@ -27,6 +27,6 @@ const artistsString = artists.join(", ");
       <h4 class="text-white text-sm">{title}</h4>
       <span class="text-xs text-gray-400">{artistsString}</span>
     </div>
-    <!-- <PlaylistPlaying id={albumId} /> -->
+    <PlaylistPlaying client:load albumId={albumId} />
   </a>
 </li>

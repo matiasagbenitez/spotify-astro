@@ -92,11 +92,12 @@ export const Playing = ({ className }) => (
   <svg
     className={className}
     role="img"
-    height="16"
-    width="16"
+    height="20"
+    width="20"
     aria-hidden="true"
     viewBox="0 0 16 16"
     xmlns="http://www.w3.org/2000/svg"
+    fill="#1ED760"
   >
     <rect x="1" y="3" width="2" height="10">
       <animate
@@ -328,19 +329,31 @@ const SongControl = ({ audio, nextSong, repeat }) => {
   );
 };
 
-const CurrentSong = ({ image, title, artists }) => {
+const CurrentSong = ({ albumId, image, title, artists }) => {
+  const handleClick = (e) => {
+    if (actualId === albumId) {
+      e.preventDefault();
+    }
+  };
+
   return (
-    <div className={`flex items-center gap-4 relative overflow-hidden`}>
-      <picture className="w-16 h-16 rounded-md shadow-lg overflow-hidden">
-        {image && (
-          <img src={image} alt={title} className="w-full h-full object-cover" />
-        )}
-      </picture>
-      <div className="flex flex-col">
-        <h3 className="font-semibold text-sm block">{title}</h3>
-        <span className="text-xs opacity-80">{artists?.join(", ")}</span>
+    <a href={`/playlist/${albumId}`} onClick={handleClick}>
+      <div className={`flex items-center gap-4 relative overflow-hidden`}>
+        <picture className="w-16 h-16 rounded-md shadow-lg overflow-hidden">
+          {image && (
+            <img
+              src={image}
+              alt={title}
+              className="w-full h-full object-cover"
+            />
+          )}
+        </picture>
+        <div className="flex flex-col">
+          <h3 className="font-semibold text-sm block">{title}</h3>
+          <span className="text-xs opacity-80">{artists?.join(", ")}</span>
+        </div>
       </div>
-    </div>
+    </a>
   );
 };
 
