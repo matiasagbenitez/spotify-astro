@@ -1,6 +1,6 @@
-import { allPlaylists, songs } from "@/lib/data";
+import { s as songs, a as allPlaylists } from './_id__CjG2J9tZ.mjs';
 
-export async function GET({ request }) {
+async function GET({ request }) {
     const { url } = request;
     const urlObject = new URL(url);
     const id = urlObject.searchParams.get("id");
@@ -17,3 +17,5 @@ export async function GET({ request }) {
         },
     });
 }
+
+export { GET };

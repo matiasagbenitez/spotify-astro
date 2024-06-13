@@ -1,4 +1,4 @@
-import { Pause, Play, Playing } from "./Player";
+import { Pause, Play } from "./Player";
 import { usePlayerStore } from "@/store/playerStore";
 
 export function SongPlayButton({ id, albumId, size = "small" }) {

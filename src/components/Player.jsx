@@ -30,7 +30,7 @@ export const Randomize = ({ className, color = "#fafafa" }) => (
   </svg>
 );
 
-export const Repeat = ({ className, color = "#fafafa" }) => (
+export const Repeat = ({ color = "#fafafa" }) => (
   <svg
     width="20"
     height="20"
@@ -58,7 +58,7 @@ export const Repeat = ({ className, color = "#fafafa" }) => (
   </svg>
 );
 
-export const Previous = ({ className }) => (
+export const Previous = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -73,7 +73,7 @@ export const Previous = ({ className }) => (
   </svg>
 );
 
-export const Next = ({ className }) => (
+export const Next = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -385,7 +385,7 @@ export function Player() {
   }, [volume]);
 
   useEffect(() => {
-    const { song, playlist, songs } = currentMusic;
+    const { song, playlist } = currentMusic;
     if (song) {
       const src = `/music/${playlist?.id}/0${song.id}.mp3`;
       audioRef.current.src = src;

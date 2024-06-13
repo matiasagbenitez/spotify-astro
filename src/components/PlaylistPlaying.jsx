@@ -3,8 +3,7 @@ import { Playing } from "./Player";
 import { usePlayerStore } from "@/store/playerStore";
 
 export function PlaylistPlaying({ albumId }) {
-  const { currentMusic, isPlaying, setCurrentMusic, setIsPlaying } =
-    usePlayerStore((state) => state);
+  const { currentMusic, isPlaying } = usePlayerStore((state) => state);
   const [isPlayingPlaylist, setIsPlayingPlaylist] = useState(false);
 
   useEffect(() => {
