@@ -19,7 +19,7 @@ export function PlaylistNavigation() {
         
   return (
     <a href="/" className="mx-6 mt-4">
-      <button className="flex items-center gap-x-2 rounded-full py-1 ps-2 pe-3 text-gray-300 text-sm font-light hover:bg-white/10 overflow-hidden transition duration-300">
+      <button className="flex items-center gap-x-2 rounded-full py-2 ps-2 pe-3 text-gray-300 text-sm font-light hover:bg-white/10 overflow-hidden transition duration-300">
         <ChevronRight />
         Volver
       </button>

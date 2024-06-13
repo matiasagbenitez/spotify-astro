@@ -16,11 +16,17 @@ const playlistSongs = songs.filter(
   <div
     id="playlist-container"
     class="relative flex flex-col h-full overflow-x-hidden"
-    style="background-image: url({playlist?.image});"
     transition:name=`playlist ${id} box`
   >
-  <PlaylistNavigation />
-  <header class="flex flex-row gap-8 px-6 my-4">
+    <!-- Fondo desenfocado -->
+    <div
+      class="absolute inset-0 -z-20 bg-cover bg-center bg-no-repeat blur-lg opacity-60"
+      style={`background-image: url(${playlist?.cover});`}
+    >
+    </div>
+
+    <PlaylistNavigation />
+    <header class="flex flex-row gap-8 px-6 my-4">
       <picture class="aspect-square w-44 h-44 flex-none">
         <img
           src={playlist?.cover}
