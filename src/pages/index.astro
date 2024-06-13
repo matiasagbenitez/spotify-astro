@@ -5,17 +5,15 @@ import PlaylistItemCard from "@/components/PlaylistItemCard.astro";
 import { playlists } from "@/lib/data";
 ---
 
-<Layout title="Spotify Clon">
+<Layout title="Scrotify — Inicio">
   <div
     id="playlist-container"
     class="relative transition-all duration-1000"
   >
-    <!-- Page header -->
 
     <div class="relative z-10 p-6">
-      <!-- Greetings -->
       <Greeting />
-      <div class="flex flex-wrap mt-4 gap-4">
+      <div class="mt-4 grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
         {playlists.map((playlist) => <PlaylistItemCard playlist={playlist} />)}
       </div>
     </div>
@@ -26,5 +24,3 @@ import { playlists } from "@/lib/data";
     </div>
   </div>
 </Layout>
-
-<style></style>

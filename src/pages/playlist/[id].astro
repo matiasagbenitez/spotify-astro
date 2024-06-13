@@ -12,7 +12,7 @@ const playlistSongs = songs.filter(
 );
 ---
 
-<Layout title="Spotify Clon">
+<Layout title={`Scrotify — ${playlist?.title}` || "Scrotify — Playlist"}>
   <div
     id="playlist-container"
     class="relative flex flex-col h-full overflow-x-hidden"
@@ -26,7 +26,8 @@ const playlistSongs = songs.filter(
     </div>
 
     <PlaylistNavigation />
-    <header class="flex flex-row gap-8 px-6 my-4">
+
+    <header class="flex flex-col lg:flex-row gap-8 px-6 my-4">
       <picture class="aspect-square w-44 h-44 flex-none">
         <img
           src={playlist?.cover}
@@ -58,7 +59,7 @@ const playlistSongs = songs.filter(
         </div>
       </div>
 
-      <div class="pl-6 flex flex-1 items-end justify-end">
+      <div class="px-0 flex flex-1 items-end justify-start lg:justify-end">
         <CardPlayButton id={id} client:load size="large" />
       </div>
     </header>

@@ -12,15 +12,15 @@ export const Randomize = ({ className, color = "#fafafa" }) => (
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
     stroke={color}
-    stroke-width="0.00032"
+    strokeWidth="0.00032"
   >
-    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+    <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
     <g
       id="SVGRepo_tracerCarrier"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       stroke="#CCCCCC"
-      stroke-width="0.128"
+      strokeWidth="0.128"
     ></g>
     <g id="SVGRepo_iconCarrier">
       {" "}
@@ -39,20 +39,20 @@ export const Repeat = ({ className, color = "#fafafa" }) => (
     xmlns="http://www.w3.org/2000/svg"
     stroke={color}
   >
-    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+    <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
     <g
       id="SVGRepo_tracerCarrier"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     ></g>
     <g id="SVGRepo_iconCarrier">
       {" "}
       <path
         d="M14 7H15.9992C19.3129 7 21.9992 9.68629 21.9992 13C21.9992 16.3137 19.3129 19 15.9992 19H8C4.68629 19 2 16.3137 2 13C2 9.68629 4.68629 7 8 7H10M7 4L10 7M10 7L7 10"
         stroke={color}
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       ></path>{" "}
     </g>
   </svg>
@@ -65,7 +65,7 @@ export const Previous = ({ className }) => (
     height="24"
     viewBox="0 0 24 24"
     fill="currentColor"
-    class="icon icon-tabler icons-tabler-filled icon-tabler-player-track-prev"
+    className="icon icon-tabler icons-tabler-filled icon-tabler-player-track-prev"
   >
     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
     <path d="M20.341 4.247l-8 7a1 1 0 0 0 0 1.506l8 7c.647 .565 1.659 .106 1.659 -.753v-14c0 -.86 -1.012 -1.318 -1.659 -.753z" />
@@ -80,7 +80,7 @@ export const Next = ({ className }) => (
     height="24"
     viewBox="0 0 24 24"
     fill="currentColor"
-    class="icon icon-tabler icons-tabler-filled icon-tabler-player-track-next"
+    className="icon icon-tabler icons-tabler-filled icon-tabler-player-track-next"
   >
     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
     <path d="M2 5v14c0 .86 1.012 1.318 1.659 .753l8 -7a1 1 0 0 0 0 -1.506l-8 -7c-.647 -.565 -1.659 -.106 -1.659 .753z" />
@@ -315,7 +315,7 @@ const SongControl = ({ audio, nextSong, repeat }) => {
         value={[currentTime]}
         max={duration}
         min={0}
-        className="w-[400px]"
+        className="w-48 lg:w-[400px]"
         onValueChange={(value) => {
           const [newCurrentTime] = value;
           audio.current.currentTime = newCurrentTime;
@@ -438,8 +438,8 @@ export function Player() {
   };
 
   return (
-    <div className="flex flex-row justify-between w-full py-2 px-8 z-50">
-      <div className="w-72">
+    <div className="flex flex-col lg:flex-row lg:justify-between w-full py-2 px-8 z-50">
+      <div className="w-full lg:w-72 flex justify-center lg:justify-start mb-6 lg:mb-0">
         <CurrentSong {...currentMusic.song} />
       </div>
       <div className="grid place-content-center gap-4 flex-1">
@@ -485,7 +485,7 @@ export function Player() {
           <audio ref={audioRef} />
         </div>
       </div>
-      <div className="w-72 flex items-center justify-end">
+      <div className="w-full lg:w-72 flex justify-center lg:justify-end mt-6 lg:mt-0">
         <VolumeControl />
       </div>
       <audio ref={audioRef} />
